@@ -74,6 +74,10 @@ h2 {
   display: none;
 }
 
+.hide {
+  display: none;
+}
+
 .task:hover > .fa.fa-trash {
   display: block;
 }
