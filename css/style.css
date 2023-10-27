@@ -95,7 +95,8 @@ h2 {
 }
 
 .fa.fa-check.done {
-  color: rgb(218, 221, 41);
+  color: #423053;
+  background-color: rgb(209, 211, 80);
 }
 
 .fa.fa-trash {

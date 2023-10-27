@@ -14,13 +14,17 @@ class Todo {
     list.appendChild(template)
 
     this.addEvents()
-  }
 
+    this.checkTasks('add')
+  }
+  
   removeTask(task) {
-  console.log('removeu')
+    let parentEl = task.parentElement
+    parentEl.remove()
+    this.checkTasks('remove')
   }
   completeTask(task) {
-    console.log('feito')
+    task.classList.add('done')
   }
 
   addEvents() {
@@ -35,7 +39,23 @@ class Todo {
     doneBtn.addEventListener('click', function() {
       todo.completeTask(this)
     })
+  }
 
+  checkTasks(command) {
+    let msg = document.querySelector('#empty-tasks')
+    if(command === 'add') {
+      this.totalTasks += 1
+    }
+    else if(command === 'remove') {
+      this.totalTasks -= 1
+    }
+
+    if(this.totalTasks == 1) {
+      msg.classList.remove('hide')
+    }
+    else {
+      msg.classList.add('hide')
+    }
   }
 }
 
